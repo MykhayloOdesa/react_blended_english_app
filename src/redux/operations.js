@@ -55,3 +55,15 @@ export const addWord = createAsyncThunk(
     }
   }
 );
+
+export const editWord = createAsyncThunk(
+  'words/editWord',
+  async (word, thunkApi) => {
+    try {
+      const response = await agent.put(`/items/${word.id}`, word);
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

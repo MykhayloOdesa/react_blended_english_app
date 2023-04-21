@@ -1,3 +1,5 @@
+import React from 'react';
+
 import WordForm from 'components/WordForm/WordForm';
 import WordsList from 'components/WordsList/WordsList';
 

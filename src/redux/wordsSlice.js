@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchWords, deleteWord, checkWord, addWord } from './operations';
+
+import {
+  fetchWords,
+  deleteWord,
+  checkWord,
+  addWord,
+  editWord,
+} from './operations';
 
 export const wordsSlice = createSlice({
   name: 'words',
@@ -41,6 +48,7 @@ export const wordsSlice = createSlice({
         state.error = action.payload;
         state.isLoading = false;
       })
+
       .addCase(checkWord.pending, state => {
         state.isLoading = true;
       })
@@ -65,6 +73,21 @@ export const wordsSlice = createSlice({
         state.items.push(action.payload);
       })
       .addCase(addWord.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(editWord.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(editWord.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.items.findIndex(
+          item => item.id === action.payload.id
+        );
+        state.items.splice(index, 1, action.payload);
+      })
+      .addCase(editWord.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
       });

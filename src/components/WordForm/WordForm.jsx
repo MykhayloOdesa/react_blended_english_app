@@ -1,4 +1,6 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { addWord } from 'redux/operations';
 
 export default function WordForm() {
@@ -26,10 +28,12 @@ export default function WordForm() {
         UKR Word
         <input type="text" name="ukrWord" />
       </label>
+
       <label>
         ENG Word
         <input type="text" name="engWord" />
       </label>
+
       <button type="submit">Add Word</button>
     </form>
   );
