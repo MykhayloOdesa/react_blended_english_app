@@ -16,7 +16,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-
-// const randomIntegerFromInterval = (min, max) => {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// };
