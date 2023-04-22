@@ -30,12 +30,22 @@ export default function WordFormList() {
           <span key={index} style={{ display: 'block' }}>
             <label>
               UKR Word
-              <input type="text" name="ukrWord" onChange={() => {}} />
+              <input
+                type="text"
+                name="ukrWord"
+                placeholder="Ukrainian Word..."
+                onChange={() => {}}
+              />
             </label>
 
             <label>
               ENG Word
-              <input type="text" name="engWord" onChange={() => {}} />
+              <input
+                type="text"
+                name="engWord"
+                placeholder="English Word..."
+                onChange={() => {}}
+              />
             </label>
 
             <button type="button" onClick={() => {}}>
