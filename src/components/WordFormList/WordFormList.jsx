@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { addWord } from 'redux/operations';
 
+import WordForm from 'components/WordForm/WordForm';
+
 export default function WordFormList() {
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
@@ -25,32 +27,10 @@ export default function WordFormList() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {Array.from(Array(counter)).map((word, index) => {
+      {Array.from(Array(counter)).map((word, index, array) => {
         return (
           <span key={index} style={{ display: 'block' }}>
-            <label>
-              UKR Word
-              <input
-                type="text"
-                name="ukrWord"
-                placeholder="Ukrainian Word..."
-                onChange={() => {}}
-              />
-            </label>
-
-            <label>
-              ENG Word
-              <input
-                type="text"
-                name="engWord"
-                placeholder="English Word..."
-                onChange={() => {}}
-              />
-            </label>
-
-            <button type="button" onClick={() => {}}>
-              Delete
-            </button>
+            <WordForm word={word} index={index} array={array} />
           </span>
         );
       })}

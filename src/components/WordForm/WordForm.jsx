@@ -1,24 +1,29 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
 
-// import { deleteWord } from 'redux/operations';
-
-export default function WordForm({ word, index }) {
-  // const dispatch = useDispatch();
-
+export default function WordForm({ word, index, array }) {
   return (
     <>
       <label>
         UKR Word
-        <input type="text" name="ukrWord" onChange={() => {}} />
+        <input
+          type="text"
+          name="ukrWord"
+          placeholder="Ukrainian Word..."
+          onChange={() => {}}
+        />
       </label>
 
       <label>
         ENG Word
-        <input type="text" name="engWord" onChange={() => {}} />
+        <input
+          type="text"
+          name="engWord"
+          placeholder="English Word..."
+          onChange={() => {}}
+        />
       </label>
 
-      <button type="button" onClick={() => {}}>
+      <button type="button" onClick={() => console.log(index)}>
         Delete
       </button>
     </>
