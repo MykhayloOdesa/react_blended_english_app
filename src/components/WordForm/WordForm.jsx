@@ -1,40 +1,26 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-import { addWord } from 'redux/operations';
+// import { deleteWord } from 'redux/operations';
 
-export default function WordForm() {
-  const dispatch = useDispatch();
-
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    const ukrWord = event.currentTarget.ukrWord.value;
-    const engWord = event.currentTarget.engWord.value;
-
-    dispatch(
-      addWord({
-        ukrWord,
-        engWord,
-      })
-    );
-
-    event.currentTarget.reset();
-  };
+export default function WordForm({ word, index }) {
+  // const dispatch = useDispatch();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <label>
         UKR Word
-        <input type="text" name="ukrWord" />
+        <input type="text" name="ukrWord" onChange={() => {}} />
       </label>
 
       <label>
         ENG Word
-        <input type="text" name="engWord" />
+        <input type="text" name="engWord" onChange={() => {}} />
       </label>
 
-      <button type="submit">Add Word</button>
-    </form>
+      <button type="button" onClick={() => {}}>
+        Delete
+      </button>
+    </>
   );
 }

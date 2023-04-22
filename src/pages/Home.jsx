@@ -1,12 +1,12 @@
 import React from 'react';
 
-import WordForm from 'components/WordForm/WordForm';
+import WordFormList from 'components/WordFormList/WordFormList';
 import WordsList from 'components/WordsList/WordsList';
 
 export default function Home() {
   return (
     <>
-      <WordForm />
+      <WordFormList />
       <WordsList />
     </>
   );
